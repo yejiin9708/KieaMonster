@@ -31,11 +31,11 @@ public class Tasks {
 	public void startTasks() throws Exception {
 		log.info("KANG-20210405 >>>>> START {} {}", CurrentInfo.get());
 		
-		if (Boolean.TRUE) this.currentTask.async0101("TASK-0101");
+		if (!Boolean.TRUE) this.currentTask.async0101("TASK-0101");
 		
-		if (Boolean.TRUE) this.historyTask.async0102("TASK-0102");
+		if (!Boolean.TRUE) this.historyTask.async0102("TASK-0102");
 		
-		if (Boolean.TRUE) this.authenticateTask.async0104("TASK-0104");
+		if (!Boolean.TRUE) this.authenticateTask.async0104("TASK-0104");
 		
 		log.info("KANG-20210405 >>>>> END   {} {}", CurrentInfo.get());
 	}
