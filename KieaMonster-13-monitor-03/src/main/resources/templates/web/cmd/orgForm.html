@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>form.html</title>
+	<!-- css and script -->
+
+	<!-- /css and script -->
+</head>
+<body>
+<!-- header -->
+<div th:replace="layout/header::header1"></div>
+<!-- /header -->
+
+<!-- main -->
+<div class="container">
+	<div class="page-header">
+		<h2>org Form</h2>
+	</div>
+	<br/>
+	<table class="table">
+		<tr>
+			<th style="padding:13px 0 0 15px;">org code</th>
+			<td><input type="text" class="col-md-1 form-control input-sm" th:value=""/></td>
+		</tr>
+		<tr>
+			<th style="padding:13px 0 0 15px;">org name</th>
+			<td><input type="text" class="col-md-1 form-control input-sm" th:value=""/></td>
+		</tr>
+		<tr>
+			<th style="padding:13px 0 0 15px;">org desc</th>
+			<td><input type="text" class="col-md-1 form-control input-sm" th:value=""/></td>
+		</tr>
+		<tr>
+			<th style="padding:13px 0 0 15px;">org comment</th>
+			<td><textarea id="result" class="col-md-1 form-control input-sm" rows="15"></textarea></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+</div>
+<!-- /main -->
+<br/><br/><br/>
+
+<!-- footer -->
+<div th:replace="layout/footer::footer1"></div>
+<!-- /footer -->
+
+</body>
+
+</html>

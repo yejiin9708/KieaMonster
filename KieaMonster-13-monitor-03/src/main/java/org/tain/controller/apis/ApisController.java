@@ -29,6 +29,12 @@ public class ApisController {
 	
 	@Autowired
 	private TbCmdService tbCmdService;
+		
+	// orgForm
+	@RequestMapping(value = {"/orgForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String orgForm() {
+		return "web/cmd/orgForm";
+	}
 	
 	@RequestMapping(value = {"/list"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public String list(Pageable pageable, Model model) {
