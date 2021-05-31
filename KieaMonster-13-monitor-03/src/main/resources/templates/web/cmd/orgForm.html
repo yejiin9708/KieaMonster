@@ -4,12 +4,13 @@
 	<meta charset="utf-8">
 	<title>form.html</title>
 	<!-- css and script -->
-
+	<th:block th:replace="layout/css::css1"></th:block>
+	<th:block th:replace="layout/script::script1"></th:block>
 	<!-- /css and script -->
 </head>
 <body>
 <!-- header -->
-<div th:replace="layout/header::header1"></div>
+<div th:replace="layout/header::header5"></div>
 <!-- /header -->
 
 <!-- main -->
@@ -21,19 +22,19 @@
 	<table class="table">
 		<tr>
 			<th style="padding:13px 0 0 15px;">org code</th>
-			<td><input type="text" class="col-md-1 form-control input-sm" th:value=""/></td>
+			<td><input type="text" class="col-md-1 form-control input-sm" th:value="111"/></td>
 		</tr>
 		<tr>
 			<th style="padding:13px 0 0 15px;">org name</th>
-			<td><input type="text" class="col-md-1 form-control input-sm" th:value=""/></td>
+			<td><input type="text" class="col-md-1 form-control input-sm" th:value="222"/></td>
 		</tr>
 		<tr>
 			<th style="padding:13px 0 0 15px;">org desc</th>
-			<td><input type="text" class="col-md-1 form-control input-sm" th:value=""/></td>
+			<td><input type="text" class="col-md-1 form-control input-sm" th:value="333"/></td>
 		</tr>
 		<tr>
 			<th style="padding:13px 0 0 15px;">org comment</th>
-			<td><textarea id="result" class="col-md-1 form-control input-sm" rows="15"></textarea></td>
+			<td><textarea id="result" class="col-md-1 form-control input-sm" rows="15">444</textarea></td>
 		</tr>
 		<tr>
 			<td></td>

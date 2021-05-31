@@ -32,7 +32,7 @@ public class ApisController {
 		
 	// orgForm
 	@RequestMapping(value = {"/orgForm"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public String orgForm() {
+	public String orgForm(Model model) {
 		return "web/cmd/orgForm";
 	}
 	
