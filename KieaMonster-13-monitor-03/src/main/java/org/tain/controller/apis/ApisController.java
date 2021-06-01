@@ -29,12 +29,350 @@ public class ApisController {
 	
 	@Autowired
 	private TbCmdService tbCmdService;
-		
-	// orgForm
+
 	@RequestMapping(value = {"/orgForm"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public String orgForm(Model model) {
+	public String orgForm(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
 		return "web/cmd/orgForm";
 	}
+	
+	@RequestMapping(value = {"/grpList"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String grpList(Pageable pageable, Model model) {
+		
+		if (Boolean.TRUE) {
+			Page<TbCmd> pageTbCmd = this.tbCmdService.listAll(pageable);
+			log.info("KANG-20200730 >>>>> pageTbCmd: {}", pageTbCmd);
+			model.addAttribute("cmdList", pageTbCmd);
+		}
+		
+		return "web/cmd/grpList";
+	}
+	
+	@RequestMapping(value = {"/grpForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String grpForm(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
+		return "web/cmd/grpForm";
+	}
+	
+	@RequestMapping(value = {"/grpSvrList"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String grpSvrList(Pageable pageable, Model model) {
+		
+		if (Boolean.TRUE) {
+			Page<TbCmd> pageTbCmd = this.tbCmdService.listAll(pageable);
+			log.info("KANG-20200730 >>>>> pageTbCmd: {}", pageTbCmd);
+			model.addAttribute("cmdList", pageTbCmd);
+		}
+		
+		return "web/cmd/grpSvrList";
+	}
+	
+	@RequestMapping(value = {"/grpSvrForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String grpSvrForm(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
+		return "web/cmd/grpSvrForm";
+	}
+	
+	@RequestMapping(value = {"/grpCmdList"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String grpCmdList(Pageable pageable, Model model) {
+		
+		if (Boolean.TRUE) {
+			Page<TbCmd> pageTbCmd = this.tbCmdService.listAll(pageable);
+			log.info("KANG-20200730 >>>>> pageTbCmd: {}", pageTbCmd);
+			model.addAttribute("cmdList", pageTbCmd);
+		}
+		
+		return "web/cmd/grpCmdList";
+	}
+	
+	@RequestMapping(value = {"/grpCmdForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String grpCmdForm(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
+		return "web/cmd/grpCmdForm";
+	}
+	
+	@RequestMapping(value = {"/svrList"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String svrList(Pageable pageable, Model model) {
+		
+		if (Boolean.TRUE) {
+			Page<TbCmd> pageTbCmd = this.tbCmdService.listAll(pageable);
+			log.info("KANG-20200730 >>>>> pageTbCmd: {}", pageTbCmd);
+			model.addAttribute("cmdList", pageTbCmd);
+		}
+		
+		return "web/cmd/svrList";
+	}
+	
+	@RequestMapping(value = {"/svrForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String svrForm(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
+		return "web/cmd/svrForm";
+	}
+	
+	@RequestMapping(value = {"/svrCmdList"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String svrCmdList(Pageable pageable, Model model) {
+		
+		if (Boolean.TRUE) {
+			Page<TbCmd> pageTbCmd = this.tbCmdService.listAll(pageable);
+			log.info("KANG-20200730 >>>>> pageTbCmd: {}", pageTbCmd);
+			model.addAttribute("cmdList", pageTbCmd);
+		}
+		
+		return "web/cmd/svrCmdList";
+	}
+	
+	@RequestMapping(value = {"/svrCmdForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String svrCmdForm(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
+		return "web/cmd/svrCmdForm";
+	}
+	
+	@RequestMapping(value = {"/cmdList"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String cmdList(Pageable pageable, Model model) {
+		
+		if (Boolean.TRUE) {
+			Page<TbCmd> pageTbCmd = this.tbCmdService.listAll(pageable);
+			log.info("KANG-20200730 >>>>> pageTbCmd: {}", pageTbCmd);
+			model.addAttribute("cmdList", pageTbCmd);
+		}
+		
+		return "web/cmd/cmdList";
+	}
+	
+	@RequestMapping(value = {"/cmdForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String cmdForm(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
+		return "web/cmd/cmdForm";
+	}
+	
+	@RequestMapping(value = {"/codeMstList"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String codeMstList(Pageable pageable, Model model) {
+		
+		if (Boolean.TRUE) {
+			Page<TbCmd> pageTbCmd = this.tbCmdService.listAll(pageable);
+			log.info("KANG-20200730 >>>>> pageTbCmd: {}", pageTbCmd);
+			model.addAttribute("cmdList", pageTbCmd);
+		}
+		
+		return "web/cmd/codeMstList";
+	}
+	
+	@RequestMapping(value = {"/codeMstForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String codeMstForm(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
+		return "web/cmd/codeMstForm";
+	}
+	
+	@RequestMapping(value = {"/usrList"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String usrList(Pageable pageable, Model model) {
+		
+		if (Boolean.TRUE) {
+			Page<TbCmd> pageTbCmd = this.tbCmdService.listAll(pageable);
+			log.info("KANG-20200730 >>>>> pageTbCmd: {}", pageTbCmd);
+			model.addAttribute("cmdList", pageTbCmd);
+		}
+		
+		return "web/cmd/usrList";
+	}
+	
+	@RequestMapping(value = {"/usrForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String usrForm(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
+		return "web/cmd/usrForm";
+	}
+
+	@RequestMapping(value = {"/brwList"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String brwList(Pageable pageable, Model model) {
+		
+		if (Boolean.TRUE) {
+			Page<TbCmd> pageTbCmd = this.tbCmdService.listAll(pageable);
+			log.info("KANG-20200730 >>>>> pageTbCmd: {}", pageTbCmd);
+			model.addAttribute("cmdList", pageTbCmd);
+		}
+		
+		return "web/cmd/brwList";
+	}
+	
+	@RequestMapping(value = {"/brwForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String brwForm(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
+		return "web/cmd/brwForm";
+	}
+	
+	@RequestMapping(value = {"/codeItemList"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String codeItemList(Pageable pageable, Model model) {
+		
+		if (Boolean.TRUE) {
+			Page<TbCmd> pageTbCmd = this.tbCmdService.listAll(pageable);
+			log.info("KANG-20200730 >>>>> pageTbCmd: {}", pageTbCmd);
+			model.addAttribute("cmdList", pageTbCmd);
+		}
+		
+		return "web/cmd/codeItemList";
+	}
+	
+	@RequestMapping(value = {"/codeItemForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String codeItemForm(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
+		return "web/cmd/codeItemForm";
+	}
+	
+	@RequestMapping(value = {"/svrcmdview"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String svrcmdview(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
+		return "web/cmd/svrcmdview";
+	}
+	
+	@RequestMapping(value = {"/grpcmdview"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String grpcmdview(@RequestParam(value = "id", defaultValue = "103") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Boolean.TRUE) {
+			model.addAttribute("wsUri", this.projEnvUrlProperties.getWsUri());
+		}
+		if (Boolean.TRUE) {
+			TbCmd tbCmd = this.tbCmdService.getOne(id);
+			log.info("KANG-20200730 >>>>> tbCmd: {}", tbCmd);
+			log.info("KANG-20200730 >>>>> wsUri: {}", this.projEnvUrlProperties.getWsUri());
+			model.addAttribute("cmd", tbCmd);
+		}
+		
+		return "web/cmd/grpcmdview";
+	}
+
+	
+	
 	
 	@RequestMapping(value = {"/list"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public String list(Pageable pageable, Model model) {
