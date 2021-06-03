@@ -33,7 +33,7 @@ spring:
       trace: false
       web-allow-others: true
   datasource:
-#    url: jdbc:h2:tcp://localhost:9092/monsterdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#   url: jdbc:h2:tcp://localhost:9092/monsterdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     url: jdbc:h2:tcp://idc.tainweb.com:9092/monsterdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE # 팀장님 연결
     driverClassName: org.h2.Driver
     username: sa
@@ -148,7 +148,7 @@ spring:
 proj-env:
   param:
     name: PARAM (air)
-    home: /Users/yejin/_YEJIN
+    home: C:\\PCH_
     base: 
     info-path: /json/info
     data-path: /json/data
